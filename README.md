@@ -67,5 +67,58 @@ usethis::use_data(mtcars)
 **data** 폴더가 만들어지고 **mtcars.rda** 파일이 만들어진 것을 볼 수 있다.
 
 
+## 데이터 설명문서 작성 
+
+먼저 R 폴더를 만든 후 아무이름으로 빈 R 파일을 만들자. [sinew](https://github.com/yonicd/sinew) 패키지 설치 후 RStudio 재시작하면 **Addins** 에 `createOxygen` 버튼이 추가되는데, R 파일에 저장된 데이터이름을 *드래그* 한 후 이 버튼을 누르자.
+
+![](fig/sinew.png)
+
+
+```r
+#' @title DATASET_TITLE
+#' @description DATASET_DESCRIPTION
+#' @format A data frame with 32 rows and 11 variables:
+#' \describe{
+#'   \item{\code{mpg}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{cyl}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{disp}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{hp}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{drat}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{wt}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{qsec}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{vs}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{am}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{gear}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{carb}}{double COLUMN_DESCRIPTION} 
+#'}
+#' @details DETAILS
+"mtcars"
+```
+
+위 내용이 **R 패키지 문서**로 포함되니 데이터 설명에 맞도록 수정하자.
+
+
+## 패키지 빌드
+
+패키지가 제대로 만들어졌는지 확인한다. Build 탭의 check 버튼을 누르면 되고, man 폴더에 문서 파일이 저장되는 것을 볼 수 있다. 결과에 *error* 가 없으면 제대로 된 것이다. **CRAN** 에 올리려면 warning과 note도 없어야 함을 기억하자.
+
+
+## 깃헙에 올리기
+
+마지막으로 Git 탭에서 commit, push 를 수행하면 패키지가 업데이트된다. `remote::install_github()` 으로 패키지를 설치하면 데이터를 불러올 수 있다.
+
+
+## 멘티 결과물 
+
+### 크로폴 팀 
+
+https://github.com/HeeyoungJoe/BicycleRoadKorea, https://github.com/kkunmando/Rthon_BicycleRoadKorea
+
+### 바이오스핀 팀 
+
+https://github.com/jykang00/overcomeCovidKor, https://github.com/irobii/overcomeCovidKor
+
+
+
 
 

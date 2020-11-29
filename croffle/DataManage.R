@@ -28,8 +28,9 @@ road$sido <- ifelse(!is.na(road$광역자치단체), road$광역자치단체,
                   ifelse(!is.na(road$시도), road$시도,
                          ifelse(!is.na(road$소재지), road$소재지, NA)))
 
+
 road$지역 <- paste(road$sido, road$시군구, sep = " ")
-road$지역 <- gsub("NA |NA NA", NA, road$지역)   ## NA 처리
+road$지역 <- gsub("NA |NA NA| NA", NA, road$지역)   ## NA 처리
 
 
 ## 필요없는 열 지우기
@@ -37,4 +38,4 @@ var.exclude <- c("광역자치단체", "시도", "소재지", "시군구", "sido
 road <- road[, setdiff(names(road), var.exclude)]
 
 
-
+usethis::use_data(road)
