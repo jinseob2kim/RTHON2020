@@ -56,6 +56,16 @@ GITHUB_PAT=xxxyyyzzz
 이제 다시 `usethis::use_github()` 를 실행하면 Repository 가 만들어진다. 본인 깃헙 계정에서 만들어진 것을 확인하자.
 
 
+## 데이터 저장하기
+
+저장하고 싶은 데이터를 **R object** 로 저장한 후 `use_data()` 를 이용하자. 아래는 기본데이터 **mtcars** 의 예시이다.
+
+```r
+usethis::use_data(mtcars)
+```
+
+**data** 폴더가 만들어지고 **mtcars.rda** 파일이 만들어진 것을 볼 수 있다.
+
 
 
 
